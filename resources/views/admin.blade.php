@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin Panel - Cafe</title>
+    <title>Admin Panel</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
     <style>
         body { background-color: rgb(240, 238, 230); }
@@ -18,7 +18,6 @@
 </head>
 <body class="flex min-h-screen">
 
-    <!-- Sidebar -->
     <div class="sidebar w-64 p-6 text-lg flex flex-col gap-4">
         <h2 class="text-2xl font-bold text-white mb-4">Admin Cafe</h2>
         <a href="#menu">Kelola Menu</a>
@@ -26,10 +25,8 @@
         <a href="#pesanan">Pesanan Menu</a>
     </div>
 
-    <!-- Main Content -->
     <div class="flex-1 p-8 space-y-12">
 
-        <!-- CRUD MENU -->
         <section id="menu">
             <h2 class="text-3xl font-bold title mb-4">Kelola Menu</h2>
 
@@ -78,7 +75,6 @@
             </div>
         </section>
 
-        <!-- RESERVASI -->
         <section id="reservasi">
             <h2 class="text-3xl font-bold title mb-4">Reservasi Pelanggan</h2>
 
@@ -110,7 +106,6 @@
             </div>
         </section>
 
-        <!-- PESANAN MENU -->
         <section id="pesanan">
             <h2 class="text-3xl font-bold title mb-4">Pesanan Menu Pelanggan</h2>
 
