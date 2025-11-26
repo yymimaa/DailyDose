@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ReservasiController;
+use App\Http\Controllers\MenuController;
+use App\Http\Controllers\OwnerController;
 
 // Welcome
 Route::get('/', function () {
@@ -29,10 +31,6 @@ Route::get('/admin', function () {
     return view('admin');
 })->name('admin.dashboard');
 
-// Halaman Pemilik
-Route::get('/owner', function () {
-    return view('owner');
-})->name('owner.dashboard');
 
 // Halaman Pelanggan
 Route::get('/reservasi', function () {
@@ -41,3 +39,10 @@ Route::get('/reservasi', function () {
 
 // Store reservasi
 Route::post('/reservasi', [ReservasiController::class, 'store'])->name('reservasi.store');
+
+// Menu
+Route::get('/menu', [MenuController::class, 'index'])->name('menu.index');
+
+Route::get('/owner', [OwnerController::class, 'index'])->name('owner.index');
+Route::get('/owner/export-pdf', [OwnerController::class, 'exportPDF'])->name('owner.export.pdf');
+Route::get('/owner/export-excel', [OwnerController::class, 'exportExcel'])->name('owner.export.excel');

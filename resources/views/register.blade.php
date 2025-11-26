@@ -116,7 +116,7 @@
     <form action="{{ route('register.process') }}" method="POST">
         @csrf
         <div class="register-container">
-            <h2>Register Pelanggan</h2>
+            <h2>Register</h2>
 
             @if ($errors->any())
                 <div class="error">

@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
-use App\Models\User;
 
 class LoginController extends Controller
 {
@@ -27,17 +25,15 @@ class LoginController extends Controller
 
             if ($user->role == 'admin') {
                 return redirect()->route('admin.dashboard');
-            } else if ($user->role == 'pemilik') {
-                return redirect()->route('owner.dashboard');
-            } else {
+            }
+            if ($user->role == 'pemilik') {
+                return redirect()->route('owner.index');
+            }
+            else {
                 return redirect()->route('pelanggan.reservasi');
             }
-
-
-            return redirect('/login')->withErrors('Role tidak dikenali.');
         }
 
         return back()->withErrors('Username atau password salah.');
     }
-
 }
